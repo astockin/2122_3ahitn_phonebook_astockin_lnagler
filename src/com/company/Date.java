@@ -1,10 +1,23 @@
 package com.company;
 
+/**
+ * @autor astockin
+ *
+ */
+
 public class Date {
 
     public int day;
     public int mon;
     public int year;
+
+    /**
+     * @Konstruktor
+     * @autor astockin
+     * @param m Monat
+     * @param d Tag
+     * @param y Jahr
+     */
 
     public Date(int m,int d,int y){
 
@@ -13,6 +26,17 @@ public class Date {
         this.year=y;
 
     }
+
+    /**
+     * @Konstruktor Date
+     * @autor astockin
+     * @param date Datum als Sting
+     *
+     * @beschreibung
+     * Liest Datum als einen String ein
+     * splitted ihn dann
+     */
+
     public Date(String date){
 
         String[] stra;
@@ -24,6 +48,16 @@ public class Date {
         this.year= Integer.parseInt(stra[2]);
 
     }
+
+    /**
+     * @getter getDay
+     * @autor astockin
+     * @return tag
+     *
+     * @beschreibug
+     * getter für tag
+     */
+
     public int getDay(){
 
         int tag=0;
@@ -34,6 +68,14 @@ public class Date {
 
         return tag;
     }
+    /**
+     * @getter getMon
+     * @autor astockin
+     * @return monat
+     *
+     * @beschreibug
+     * getter für Monat
+     */
 
     public  int getMon(){
 
@@ -44,6 +86,14 @@ public class Date {
         return monat;
 
     }
+    /**
+     * @getter getYear
+     * @autor astockin
+     * @return jahr
+     *
+     * @beschreibug
+     * getter für Jahr
+     */
     public  int getYear(){
 
         int jahr=0;
@@ -54,6 +104,14 @@ public class Date {
 
         return jahr;
     }
+    /**
+     * @Methode isLeapYear
+     * @autor astockin
+     * @return boolean true/false
+     *
+     * @beschreibung
+     * Prüft ob es ein Schaltjahr ist
+     */
 
     public boolean isLeapYear(){
 
@@ -67,6 +125,15 @@ public class Date {
 
         return ret;
     }
+
+    /**
+     * @autor astockin
+     * @param d
+     * @return boolean false/true
+     *
+     * @beschreibung
+     * Wirft exception falls falsch
+     */
 
     public static boolean isValid(Date d){//beim aufruf wird die exeption throw erstellt
 
