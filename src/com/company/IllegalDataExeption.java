@@ -8,8 +8,14 @@ package com.company;
 
 public class IllegalDataExeption extends Exception{
 
-    public IllegalDataExeption(String message){
-        super(message);
+    public int type;
+    public int Day_illegal=0;
+    public int Mon_illegal=1;
+
+    public IllegalDataExeption(int ext){
+        this.type=ext;
+
+
     }
 
 }
