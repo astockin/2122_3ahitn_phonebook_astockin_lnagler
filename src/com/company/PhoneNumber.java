@@ -8,10 +8,11 @@ public class PhoneNumber {
     private int areacode;
     private int number;
 
-    PhoneNumber(int c, int a, int n){
+    PhoneNumber(int c, int a, int n) throws IllegalPhoneNumberException{
         country = c;
         areacode = a;
-        number = c;
+        number = n;
+
     }
     PhoneNumber(String number){
 
@@ -38,8 +39,9 @@ public class PhoneNumber {
                 '}';
     }
 
-    public boolean isValid(PhoneNumber d){
-
-        return true;
+    public void isValid(PhoneNumber d) throws IllegalPhoneNumberException {
+        if (d.country != 43){
+            throw new IllegalPhoneNumberException(IllegalPhoneNumberException.COUNTRY_ILLEGAL);
+        }
     }
 }

@@ -2,14 +2,17 @@ package com.company;
 /**
  * @author lnagler1
  */
-public class IllegalPhoneNumberException {
+public class IllegalPhoneNumberException extends Throwable {
     public int type;
-    public int COUNTRY_ILLEGAL;
-    public int AREA_ILLEGAL;
-    public int NUMBER_ILLEGAL;
-    public int STRING_FORMAT_ILLEGAL;
+    public static final int COUNTRY_ILLEGAL = 0;
+    public static final int AREA_ILLEGAL = 1;
+    public static final int NUMBER_ILLEGAL = 2;
+    public static final int STRING_FORMAT_ILLEGAL = 3;
 
     IllegalPhoneNumberException(int type){
-
+        this.type = type;
+        if (type == COUNTRY_ILLEGAL){
+            System.out.println();
+        }
     }
 }
