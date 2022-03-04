@@ -10,9 +10,6 @@ public class IllegalPhoneNumberException extends Throwable {
     public static final int STRING_FORMAT_ILLEGAL = 3;
 
     IllegalPhoneNumberException(int type){
-        this.type = type;
-        if (type == COUNTRY_ILLEGAL){
-            System.out.println();
-        }
+
     }
 }
