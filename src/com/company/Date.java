@@ -153,6 +153,16 @@ public class Date {
         return ret;
     }
 
+    @Override
+    public String toString() {
+        return "{" +
+                "day=" + day +
+                ", mon=" + mon +
+                ", year=" + year +
+                '}';
+    }
 
-
+    public String toFile(){
+        return day + "." + mon + "." + year;
+    }
 }

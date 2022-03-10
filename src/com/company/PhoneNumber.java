@@ -8,6 +8,7 @@ public class PhoneNumber {
     private int country;
     private int areacode;
     private int number;
+    private String fullNumber;
 
     PhoneNumber(int c, int a, int n) throws IllegalPhoneNumberException{
         if (c != 43){
@@ -17,14 +18,17 @@ public class PhoneNumber {
         }else if (n >= 10000000){
             throw new IllegalPhoneNumberException(IllegalPhoneNumberException.NUMBER_ILLEGAL);
         }
-
         country = c;
         areacode = a;
         number = n;
 
+        fullNumber = c + " ";
+        fullNumber+= a + "/";
+        fullNumber+= n;
+
     }
     PhoneNumber(String number){
-
+        this.fullNumber = number;
     }
 
     public int getNumber() {
@@ -41,11 +45,13 @@ public class PhoneNumber {
 
     @Override
     public String toString() {
-        return "PhoneNumber{" +
-                "country=" + country +
-                ", areacode=" + areacode +
-                ", number=" + number +
+        return "PhoneNumber={" +
+                fullNumber +
                 '}';
+    }
+
+    public String toFile(){
+        return fullNumber;
     }
 
 }

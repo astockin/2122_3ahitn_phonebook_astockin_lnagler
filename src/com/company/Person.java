@@ -9,21 +9,42 @@ public class Person {
     Date birthday;
     PhoneNumber phone;
 
-    Person(String n, String gn, Date bd, PhoneNumber p){
+    Person(String n, String gn, String nk, Date bd, PhoneNumber p){
         name = n;
         givenname = gn;
+        nickname = nk;
         birthday = bd;
         phone = p;
+    }
+
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public String getGivenname() {
+        return givenname;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public PhoneNumber getPhone() {
+        return phone;
     }
 
     @Override
     public String toString() {
         return "Person{" +
-                "name='" + name + '\'' +
-                ", givenName='" + givenname + '\'' +
-                ", nickName='" + nickname + '\'' +
-                ", birthday=" + birthday +
-                ", phone=" + phone +
+                "Name='" + name + '\'' +
+                ", GivenName='" + givenname + '\'' +
+                ", NickName='" + nickname + '\'' +
+                ", Birthday=" + birthday.toString() +
+                ", " + phone.toString() +
                 '}';
+    }
+
+    public String toFile(){
+        return name + ";" + givenname + ";" + nickname + ";" + birthday.toFile() + ";" + phone.toFile();
     }
 }
